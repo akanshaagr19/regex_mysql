@@ -116,8 +116,73 @@ select now() from dual ;
 -- pseudo column => column => specific meaning, already available with the system
 
 -- concat , concat_ws , substr
+-- string functions
+-- Length 
 
+select char_length("akansha");
+Select length("akansha");
 
+-- concate
+select concat("h","-",1) from dual;
+
+-- concate ws
+select concat_ws("-","hey","akansha") from dual;
+
+-- upper and lower to change the case of the string 
+select upper("akansha");
+
+-- substr function to extract the string substr() or substring() can be used 
+select substr("hello",2);
+select substr("hello",-2);
+
+select substr("hello",2,3);
+select substr(substr("hello",1,3),2);  -- very useful 
+
+-- instr("data",str) function to return the index position 
+select instr("hello","e");
+select instr("hello","ez");
+
+-- locate() to find the location(string,data)
+select locate("el","hello");
+select locate("a","rajasthan",3);
+
+-- Ltrim left side white spaces removed
+select ltrim("                      -----xyz");
+
+-- rtrim to remove white space from the right side
+select rtrim("----xyz                  ");
+
+-- trim 
+select trim("          xyz             ");
+
+-- trim with leading 
+select trim(leading " " from  "          zyz       ");
+
+-- trim with trailing 
+select trim(trailing " " from  "        xyz          ");
+
+-- both() , from both the side, we can remove space and characters as well with trim method.
+-- it will not remove middle character or white spaces only left and right will be removed.
+select trim(both "z" from " zzzz  xyz");
+
+-- lpad(str,len,padstr), string, length of the string and padstr will be the string to be added
+select lpad("hello" ,6, "#");
+select lpad("hello123" ,6, "#");
+
+-- rpad to add the padstr to the right
+select rpad("hello" ,6, "#");
+select rpad("hell" ,8, "#");
+
+-- replace(str,from_str,to_str)
+select replace("akansha","s","k");
+
+use sakila;
+select * from language;
+desc language;
+select count(*) from language;
+
+-- DML - data manipulation language (CRUD operatios - Create, retrieve, update , delete 
+select 
 
 
 
